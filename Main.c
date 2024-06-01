@@ -6,9 +6,9 @@ int main()
     if ( !newfile )
     {
         newfile = fopen( "E-Lexicon.txt", "w" );
-        fprintf( newfile, "apple    Æ»¹û\n" );
-        fprintf( newfile, "banana   Ïã½¶\n" );
-        fprintf( newfile, "photo    ÕÕÆ¬\n" );
+        fprintf( newfile, "apple    è‹¹æžœ\n" );
+        fprintf( newfile, "banana   é¦™è•‰\n" );
+        fprintf( newfile, "photo    ç…§ç‰‡\n" );
     }
     fclose( newfile );
     LinkedList *obj = NULL;
