@@ -1,11 +1,11 @@
-#include "E_Lexicon.h"
+ï»¿#include "E_Lexicon.h"
 
 ListNode *createwords( char *en, char *zh )
 {
     ListNode *words = ( ListNode* )malloc( sizeof( ListNode ) );
     if ( !words )
     {
-        printf( "ÄÚ´æ²»×ã£¡\a" );
+        printf( "å†…å­˜ä¸è¶³ï¼\a" );
         Sleep( 5000 );
         exit( 0 );
     }
@@ -20,12 +20,12 @@ LinkedList *createlist()
     LinkedList *obj = ( LinkedList* )malloc( sizeof( LinkedList ) );
     if ( !obj )
     {
-        printf( "ÄÚ´æ²»×ã£¡\a" );
+        printf( "å†…å­˜ä¸è¶³ï¼\a" );
         Sleep( 5000 );
         exit( 0 );
     }
-    char enfriwd[20] = "Ó¢ÎÄ";
-    char zhfriwd[80] = "ÖĞÎÄ";
+    char enfriwd[20] = "è‹±æ–‡";
+    char zhfriwd[80] = "ä¸­æ–‡";
     obj -> head = createwords( enfriwd, zhfriwd );
     return obj;
 }
@@ -36,11 +36,11 @@ void addnewword( LinkedList *obj, char *en, char *zh )
     if ( obj -> head -> next )
     {
         ListNode *cur = obj -> head -> next;
-        while ( cur -> next != NULL && _stricmp( cur -> en_words, toadd -> en_words ) <= 0 && strcmp( cur -> en_words, toadd -> en_words) != 0 )
+        while ( cur -> next != NULL && stricmp( cur -> en_words, toadd -> en_words ) <= 0 && strcmp( cur -> en_words, toadd -> en_words) != 0 )
         {
             cur = cur -> next;
         }
-        if ( ( ( cur -> next != NULL && strcmp( cur -> en_words, toadd -> en_words) != 0 ) || ( !(cur -> next) && _stricmp( cur -> en_words, toadd -> en_words ) > 0 ) ) )
+        if ( ( ( cur -> next != NULL && strcmp( cur -> en_words, toadd -> en_words) != 0 ) || ( !(cur -> next) && stricmp( cur -> en_words, toadd -> en_words ) > 0 ) ) )
         {
             ListNode *prev = obj -> head;
             while ( prev -> next != cur )
@@ -49,26 +49,26 @@ void addnewword( LinkedList *obj, char *en, char *zh )
             }
             toadd -> next = cur;
             prev -> next = toadd;
-            printf( "Ìí¼Ó%s %s³É¹¦¡£Çë¼ÌĞøÊäÈë£º\n", prev -> next -> en_words, prev -> next -> zh_words );
+            printf( "æ·»åŠ %s %sæˆåŠŸã€‚è¯·ç»§ç»­è¾“å…¥ï¼š\n", prev -> next -> en_words, prev -> next -> zh_words );
         }
         else
         {
             if ( !strcmp( cur -> en_words, toadd -> en_words ) || !strcmp( cur -> zh_words, toadd -> zh_words ) )
             {
-                printf( "´æÔÚ%s %s£¡Çë¼ÌĞøÊäÈë£º\n\a", cur -> en_words, cur -> zh_words );
+                printf( "å­˜åœ¨%s %sï¼è¯·ç»§ç»­è¾“å…¥ï¼š\n\a", cur -> en_words, cur -> zh_words );
                 free( toadd );
             }
             else
             {
                 cur -> next = toadd;
-                printf( "Ìí¼Ó%s %s³É¹¦¡£Çë¼ÌĞøÊäÈë£º\n", cur -> next -> en_words, cur -> next -> zh_words );
+                printf( "æ·»åŠ %s %sæˆåŠŸã€‚è¯·ç»§ç»­è¾“å…¥ï¼š\n", cur -> next -> en_words, cur -> next -> zh_words );
             }
         }
     }
     else
     {
         obj -> head -> next = toadd;
-        printf( "Ìí¼Ó%s %s³É¹¦¡£Çë¼ÌĞøÊäÈë£º\n", obj -> head -> next -> en_words, obj -> head -> next -> zh_words );
+        printf( "æ·»åŠ %s %sæˆåŠŸã€‚è¯·ç»§ç»­è¾“å…¥ï¼š\n", obj -> head -> next -> en_words, obj -> head -> next -> zh_words );
     }
     write_to_file( obj );
 }
@@ -82,7 +82,7 @@ void deleteword( LinkedList *obj, char *en, char *zh )
     }
     if ( !cur )
     {
-        printf( "ÕÒ²»µ½%s %s£¡Çë¼ÌĞøÊäÈë£º\n\a", en, zh );
+        printf( "æ‰¾ä¸åˆ°%s %sï¼è¯·ç»§ç»­è¾“å…¥ï¼š\n\a", en, zh );
     }
     else
     {
@@ -92,7 +92,7 @@ void deleteword( LinkedList *obj, char *en, char *zh )
             prev = prev -> next;
         }
         prev -> next = cur -> next;
-        printf( "É¾³ı%s %s³É¹¦¡£Çë¼ÌĞøÊäÈë£º\n", cur -> en_words, cur -> zh_words );
+        printf( "åˆ é™¤%s %sæˆåŠŸã€‚è¯·ç»§ç»­è¾“å…¥ï¼š\n", cur -> en_words, cur -> zh_words );
         free(cur);
         write_to_file( obj );
     }
@@ -109,12 +109,12 @@ void editword( LinkedList *obj, char *en, char *zh )
     {
         strcpy( cur -> en_words, en );
         strcpy( cur -> zh_words, zh );
-        printf( "¸ü¸Ä%s %s³É¹¦¡£Çë¼ÌĞøÊäÈë£º\n", cur -> en_words, cur -> zh_words );
+        printf( "æ›´æ”¹%s %sæˆåŠŸã€‚è¯·ç»§ç»­è¾“å…¥ï¼š\n", cur -> en_words, cur -> zh_words );
         write_to_file( obj );
     }
     else
     {
-        printf( "ÕÒ²»µ½%s %s£¡Çë¼ÌĞøÊäÈë£º\n\a", en, zh );
+        printf( "æ‰¾ä¸åˆ°%s %sï¼è¯·ç»§ç»­è¾“å…¥ï¼š\n\a", en, zh );
     }
 }
 
@@ -128,12 +128,12 @@ void findword( LinkedList *obj, char *en, char *zh )
     if ( cur )
     {
         printf( "%-20s\t%-80s\n", cur -> en_words, cur -> zh_words );
-        printf( "Çë¼ÌĞøÊäÈë£º\n" );
+        printf( "è¯·ç»§ç»­è¾“å…¥ï¼š\n" );
     }
     else
     {
-        printf( "ÕÒ²»µ½%s%s£¡\n\a", en, zh );
-        printf( "Çë¼ÌĞøÊäÈë£º\n" );
+        printf( "æ‰¾ä¸åˆ°%s%sï¼\n\a", en, zh );
+        printf( "è¯·ç»§ç»­è¾“å…¥ï¼š\n" );
     }
 }
 

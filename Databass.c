@@ -1,11 +1,11 @@
-#include "E_Lexicon.h"
+ï»¿#include "E_Lexicon.h"
 
 void write_to_file( LinkedList *obj )
 {
     FILE *file = fopen( "E-Lexicon.txt", "w" );
     if ( !file )
     {
-        printf( "ÎŞ·¨´ò¿ªÎÄ¼ş£¡\a" );
+        printf( "æ— æ³•æ‰“å¼€æ–‡ä»¶ï¼\a" );
         Sleep( 3000 );
         exit( 0 );
     }
@@ -22,11 +22,11 @@ void write_to_file( LinkedList *obj )
 void read_to_file( LinkedList *obj )
 {
     FILE *file = fopen( "E-Lexicon.txt", "r" );
-    printf( "ÕıÔÚ»ñÈ¡Éú´Ê¿âÖĞ......\n" );
+    printf( "æ­£åœ¨è·å–ç”Ÿè¯åº“ä¸­......\n" );
     Sleep( 3000 );
     if ( !file )
     {
-        printf( "ÕÒ²»µ½Éú´Ê¿â£¬Çë¼ì²é¡°E-Lexicon.txt¡±ÊÇ·ñÓë¸ÃÈí¼ş·ÅÔÚÍ¬Ò»ÎÄ¼ş¼ĞÖĞ£¡\a" );
+        printf( "æ‰¾ä¸åˆ°ç”Ÿè¯åº“ï¼Œè¯·æ£€æŸ¥â€œE-Lexicon.txtâ€æ˜¯å¦ä¸è¯¥è½¯ä»¶æ”¾åœ¨åŒä¸€æ–‡ä»¶å¤¹ä¸­ï¼\a" );
         Sleep( 5000 );
         exit( 0 );
     }
@@ -44,7 +44,7 @@ bool passwordpass( char *password )
 {
     int not_pass_times = 0;
     char input_password[12] = { 0 };
-    printf( "ÇëÊäÈëÃÜÂë£¨Ä¬ÈÏÃÜÂëÎª¡°20240315¡±£©£º" );
+    printf( "è¯·è¾“å…¥å¯†ç ï¼ˆé»˜è®¤å¯†ç ä¸ºâ€œ20240315â€ï¼‰ï¼š" );
     while ( scanf( "%12s", &input_password) != EOF )
     {
         scanf( "%*[^\n]" );
@@ -62,7 +62,7 @@ bool passwordpass( char *password )
             }
             else
             {
-                printf( "ÃÜÂë´íÎó£¬Äã»¹ÓĞ%d´Î»ú»á£¬ÇëÖØĞÂÊäÈë£º\a", 3 - not_pass_times );
+                printf( "å¯†ç é”™è¯¯ï¼Œä½ è¿˜æœ‰%dæ¬¡æœºä¼šï¼Œè¯·é‡æ–°è¾“å…¥ï¼š\a", 3 - not_pass_times );
             }
         }
     }
@@ -94,7 +94,7 @@ void readpassword( char *password )
 char *changepassword()
 {
     static char ppasswd[11] = { 0 };
-    printf( "Çë¸ü¸ÄÄãµÄÃÜÂë£¨ÖÁ¶àÊ®¸ö×Ö·û£©£º" );
+    printf( "è¯·æ›´æ”¹ä½ çš„å¯†ç ï¼ˆè‡³å¤šåä¸ªå­—ç¬¦ï¼‰ï¼š" );
     while ( scanf( "%10s", ppasswd ) != EOF )
     {
         if ( strlen(ppasswd) <= 10 )
@@ -102,7 +102,7 @@ char *changepassword()
             scanf( "%*c" );
             break;
         }
-        printf( "ÒÑ¾­³¬¹ıÊ®¸ö×Ö·û£¬ÇëÖØĞÂÊäÈë£º\a" );
+        printf( "å·²ç»è¶…è¿‡åä¸ªå­—ç¬¦ï¼Œè¯·é‡æ–°è¾“å…¥ï¼š\a" );
         scanf( "%*[^\n]" );
         scanf( "%*c" );
     }

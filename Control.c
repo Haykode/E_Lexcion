@@ -1,4 +1,4 @@
-#include "E_Lexicon.h"
+ï»¿#include "E_Lexicon.h"
 
 void MainMenuSelect( LinkedList *obj )
 {
@@ -16,11 +16,11 @@ void MainMenuSelect( LinkedList *obj )
                 {
                     obj = createlist();
                     read_to_file( obj );
-                    printf( "Íê³É£¡\n" );
+                    printf( "å®Œæˆï¼\n" );
                 }
                 else
                 {
-                    printf( "ÒÑ³É¹¦´´½¨Éú´Ê¿â£¬ÎŞĞèÔÙ´Î´´½¨£¡\a " );
+                    printf( "å·²æˆåŠŸåˆ›å»ºç”Ÿè¯åº“ï¼Œæ— éœ€å†æ¬¡åˆ›å»ºï¼\a " );
                 }
                 break;
             }
@@ -28,7 +28,7 @@ void MainMenuSelect( LinkedList *obj )
             {
                 if ( !obj )
                 {
-                    printf( "ÇëÏÈ´´½¨Éú´Ê¿â£¡\a" );
+                    printf( "è¯·å…ˆåˆ›å»ºç”Ÿè¯åº“ï¼\a" );
                     break;
                 }
                 system( "cls" );
@@ -40,13 +40,13 @@ void MainMenuSelect( LinkedList *obj )
             {
                 if ( !obj )
                 {
-                    printf( "ÇëÏÈ´´½¨Éú´Ê¿â£¡\a" );
+                    printf( "è¯·å…ˆåˆ›å»ºç”Ÿè¯åº“ï¼\a" );
                     break;
                 }
                 readpassword( password );
                 if ( passwordpass( password ) == false )
                 {
-                    printf( "ÄãÒÑ¾­Êä´í3´ÎÃÜÂë£¬ÇëÉÔºóÔÙÊÔ£¡\a" );
+                    printf( "ä½ å·²ç»è¾“é”™3æ¬¡å¯†ç ï¼Œè¯·ç¨åå†è¯•ï¼\a" );
                 }
                 else
                 {
@@ -60,7 +60,7 @@ void MainMenuSelect( LinkedList *obj )
             {
                 if ( !obj )
                 {
-                    printf( "ÇëÏÈ´´½¨Éú´Ê¿â£¡\a" );
+                    printf( "è¯·å…ˆåˆ›å»ºç”Ÿè¯åº“ï¼\a" );
                     break;
                 }
                 system( "cls" );
@@ -72,31 +72,31 @@ void MainMenuSelect( LinkedList *obj )
             {
                 if ( !obj )
                 {
-                    printf( "ÇëÏÈ´´½¨Éú´Ê¿â£¡\a" );
+                    printf( "è¯·å…ˆåˆ›å»ºç”Ÿè¯åº“ï¼\a" );
                     break;
                 }
                 readpassword( password );
                 char *newpassword = changepassword();
                 if ( !strcmp( password, newpassword ) )
                 {
-                    printf( "¸ÃÃÜÂëÒÑÉèÖÃ£¡\n" );
+                    printf( "è¯¥å¯†ç å·²è®¾ç½®ï¼\n" );
                 }
                 else
                 {
                     strcpy( password, newpassword );
                     savepassword( password );
-                    printf( "¸ü¸Ä³É¹¦£¡\n" );
+                    printf( "æ›´æ”¹æˆåŠŸï¼\n" );
                 }
                 break;
             }
             case '0':
             {
-                printf( "¸ĞĞ»ÄãÊ¹ÓÃ±¾Èí¼ş£¬ÔÙ¼û£¡\n" );
+                printf( "æ„Ÿè°¢ä½ ä½¿ç”¨æœ¬è½¯ä»¶ï¼Œå†è§ï¼\n" );
                 Sleep( 5000 );
                 break;
             }
             default:
-                printf( "Ñ¡Ïî²»´æÔÚ£¬ÇëÖØĞÂÑ¡Ôñ£º\a" );
+                printf( "é€‰é¡¹ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼š\a" );
         }
         if ( msel_Num == '0' )
         {
@@ -127,7 +127,7 @@ void ShowMenuSelect( LinkedList *obj )
                 {
                     system( "cls" );
                     printlist_all( obj );
-                    printf( "ÊÇ·ñ·µ»Ø£¿[y/n]£º" );
+                    printf( "æ˜¯å¦è¿”å›ï¼Ÿ[y/n]ï¼š" );
                     while( 1 == scanf( "%c", &isretn ) )
                     {
                         scanf( "%*[^\n]" );
@@ -136,11 +136,11 @@ void ShowMenuSelect( LinkedList *obj )
                         {
                             break;
                         }
-                        printf( "Ñ¡Ïî²»´æÔÚ£¬ÇëÖØĞÂÑ¡Ôñ£º\a" );
+                        printf( "é€‰é¡¹ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼š\a" );
                     }
                     if ( isretn == 'y' || isretn == 'Y' )
                     {
-                        printf( "ÇëÉÔµÈ£¡\n" );
+                        printf( "è¯·ç¨ç­‰ï¼\n" );
                         break;
                     }
                 }
@@ -152,7 +152,7 @@ void ShowMenuSelect( LinkedList *obj )
                 {
                     system( "cls" );
                     printlist_zh( obj );
-                    printf( "ÊÇ·ñ·µ»Ø£¿[y/n]£º" );
+                    printf( "æ˜¯å¦è¿”å›ï¼Ÿ[y/n]ï¼š" );
                     while( 1 == scanf( "%c", &isretn ) )
                     {
                         scanf( "%*[^\n]" );
@@ -161,11 +161,11 @@ void ShowMenuSelect( LinkedList *obj )
                         {
                             break;
                         }
-                        printf( "Ñ¡Ïî²»´æÔÚ£¬ÇëÖØĞÂÑ¡Ôñ£º\a" );
+                        printf( "é€‰é¡¹ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼š\a" );
                     }
                     if ( isretn == 'y' || isretn == 'Y' )
                     {
-                        printf( "ÇëÉÔµÈ£¡\n" );
+                        printf( "è¯·ç¨ç­‰ï¼\n" );
                         break;
                     }
                 }
@@ -177,7 +177,7 @@ void ShowMenuSelect( LinkedList *obj )
                 {
                     system( "cls" );
                     printlist_en( obj );
-                    printf( "ÊÇ·ñ·µ»Ø£¿[y/n]£º" );
+                    printf( "æ˜¯å¦è¿”å›ï¼Ÿ[y/n]ï¼š" );
                     while( 1 == scanf( "%c", &isretn ) )
                     {
                         scanf( "%*[^\n]" );
@@ -186,11 +186,11 @@ void ShowMenuSelect( LinkedList *obj )
                         {
                             break;
                         }
-                        printf( "Ñ¡Ïî²»´æÔÚ£¬ÇëÖØĞÂÑ¡Ôñ£º\a" );
+                        printf( "é€‰é¡¹ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼š\a" );
                     }
                     if ( isretn == 'y' || isretn == 'Y' )
                     {
-                        printf( "ÇëÉÔµÈ£¡\n" );
+                        printf( "è¯·ç¨ç­‰ï¼\n" );
                         break;
                     }
                 }
@@ -198,17 +198,17 @@ void ShowMenuSelect( LinkedList *obj )
             }
             case '4':
             {
-                printf( "ÇëÉÔµÈ£¡\n" );
+                printf( "è¯·ç¨ç­‰ï¼\n" );
                 break;
             }
             case '0':
             {
-                printf( "¸ĞĞ»ÄãÊ¹ÓÃ±¾Èí¼ş£¬ÔÙ¼û£¡\n" );
+                printf( "æ„Ÿè°¢ä½ ä½¿ç”¨æœ¬è½¯ä»¶ï¼Œå†è§ï¼\n" );
                 Sleep( 5000 );
                 exit( 0 );
             }
             default:
-                printf( "Ñ¡Ïî²»´æÔÚ£¬ÇëÖØĞÂÑ¡Ôñ£º\a" );
+                printf( "é€‰é¡¹ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼š\a" );
         }
         if ( ssel_Num >= '0' && ssel_Num <= '4' )
             break;
@@ -238,12 +238,12 @@ void EditMenuSelect( LinkedList *obj )
         {
             case '1':
             {
-                printf( "Çë°´¸ñÊ½ÊäÈë£¨ÀıÈç£ºEnglish Ó¢Óï£©¡£Èç¹û²»ÔÙÌí¼Ó£¬ÇëÊäÈë¡°C È¡Ïû¡±£º\n" );
+                printf( "è¯·æŒ‰æ ¼å¼è¾“å…¥ï¼ˆä¾‹å¦‚ï¼šEnglish è‹±è¯­ï¼‰ã€‚å¦‚æœä¸å†æ·»åŠ ï¼Œè¯·è¾“å…¥â€œC å–æ¶ˆâ€ï¼š\n" );
                 while ( 2 == scanf( "%20s %80s", &en, &zh ) )
                 {
-                    if ( strcmp( en, "C" ) == 0 && strcmp( zh, "È¡Ïû" ) == 0 )
+                    if ( strcmp( en, "C" ) == 0 && strcmp( zh, "å–æ¶ˆ" ) == 0 )
                     {
-                        printf( "ÇëÉÔµÈ£¡\n" );
+                        printf( "è¯·ç¨ç­‰ï¼\n" );
                         scanf( "%*c" );
                         break;
                     }
@@ -253,12 +253,12 @@ void EditMenuSelect( LinkedList *obj )
             }
             case '2':
             {
-                printf( "Çë°´¸ñÊ½ÊäÈë£¨ÀıÈç£ºEnglish Ó¢Óï£©¡£Èç¹û²»ÔÙÉ¾³ı£¬ÇëÊäÈë¡°C È¡Ïû¡±£º\n" );
+                printf( "è¯·æŒ‰æ ¼å¼è¾“å…¥ï¼ˆä¾‹å¦‚ï¼šEnglish è‹±è¯­ï¼‰ã€‚å¦‚æœä¸å†åˆ é™¤ï¼Œè¯·è¾“å…¥â€œC å–æ¶ˆâ€ï¼š\n" );
                 while ( 2 == scanf( "%20s %80s", &en, &zh ) )
                 {
-                    if ( strcmp( en, "C" ) == 0 && strcmp( zh, "È¡Ïû" ) == 0 )
+                    if ( strcmp( en, "C" ) == 0 && strcmp( zh, "å–æ¶ˆ" ) == 0 )
                     {
-                        printf( "ÇëÉÔµÈ£¡\n" );
+                        printf( "è¯·ç¨ç­‰ï¼\n" );
                         scanf( "%*c" );
                         break;
                     }
@@ -268,12 +268,12 @@ void EditMenuSelect( LinkedList *obj )
             }
             case '3':
             {
-                printf( "Çë°´¸ñÊ½ÊäÈë£¨ÀıÈç£ºEnglish Ó¢Óï£©¡£Èç¹û²»ÔÙĞŞ¸Ä£¬ÇëÊäÈë¡°C È¡Ïû¡±£º\n" );
+                printf( "è¯·æŒ‰æ ¼å¼è¾“å…¥ï¼ˆä¾‹å¦‚ï¼šEnglish è‹±è¯­ï¼‰ã€‚å¦‚æœä¸å†ä¿®æ”¹ï¼Œè¯·è¾“å…¥â€œC å–æ¶ˆâ€ï¼š\n" );
                 while ( 2 == scanf( "%20s %80s", &en, &zh ) )
                 {
-                    if ( strcmp( en, "C" ) == 0 && strcmp( zh, "È¡Ïû" ) == 0 )
+                    if ( strcmp( en, "C" ) == 0 && strcmp( zh, "å–æ¶ˆ" ) == 0 )
                     {
-                        printf( "ÇëÉÔµÈ£¡\n" );
+                        printf( "è¯·ç¨ç­‰ï¼\n" );
                         scanf( "%*c" );
                         break;
                     }
@@ -283,17 +283,17 @@ void EditMenuSelect( LinkedList *obj )
             }
             case '4':
             {
-                printf( "ÇëÉÔµÈ£¡\n" );
+                printf( "è¯·ç¨ç­‰ï¼\n" );
                 break;
             }
             case '0':
             {
-                printf( "¸ĞĞ»ÄãÊ¹ÓÃ±¾Èí¼ş£¬ÔÙ¼û£¡\n" );
+                printf( "æ„Ÿè°¢ä½ ä½¿ç”¨æœ¬è½¯ä»¶ï¼Œå†è§ï¼\n" );
                 Sleep( 5000 );
                 exit( 0 );
             }
             default:
-                printf( "Ñ¡Ïî²»´æÔÚ£¬ÇëÖØĞÂÑ¡Ôñ£º\a" );
+                printf( "é€‰é¡¹ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼š\a" );
         } 
         if ( esel_Num >= '0' && esel_Num <= '4' )
             break;
@@ -324,14 +324,14 @@ void FindMenuSelect( LinkedList *obj )
         {
             case '1':
             {
-                printf( "ÇëÊäÈëÓ¢ÎÄ¡£Èç¹û²»ÔÙ²éÑ¯£¬ÇëÊäÈë¡°CF¡±£º\n" );
+                printf( "è¯·è¾“å…¥è‹±æ–‡ã€‚å¦‚æœä¸å†æŸ¥è¯¢ï¼Œè¯·è¾“å…¥â€œCFâ€ï¼š\n" );
                 while ( 1 == scanf( "%20s", &en ) )
                 {
                     scanf( "%*[^\n]" );
                     scanf( "%*c" );
                     if ( !strcmp( en, "CF" ) )
                     {
-                        printf( "ÇëÉÔµÈ£¡\n" );
+                        printf( "è¯·ç¨ç­‰ï¼\n" );
                         break;
                     }
                     findword( obj, en, zh );
@@ -340,14 +340,14 @@ void FindMenuSelect( LinkedList *obj )
             }
             case '2':
             {
-                printf( "ÇëÊäÈëÖĞÎÄ¡£Èç¹û²»ÔÙ²éÑ¯£¬ÇëÊäÈë¡°CF¡±£º\n" );
+                printf( "è¯·è¾“å…¥ä¸­æ–‡ã€‚å¦‚æœä¸å†æŸ¥è¯¢ï¼Œè¯·è¾“å…¥â€œCFâ€ï¼š\n" );
                 while ( 1 == scanf( "%20s", &zh ) )
                 {
                     scanf( "%*[^\n]" );
                     scanf( "%*c" );
                     if ( !strcmp( zh, "CF" ) )
                     {
-                        printf( "ÇëÉÔµÈ£¡\n" );
+                        printf( "è¯·ç¨ç­‰ï¼\n" );
                         break;
                     }
                     findword( obj, en, zh );
@@ -356,17 +356,17 @@ void FindMenuSelect( LinkedList *obj )
             }
             case '3':
             {
-                printf( "ÇëÉÔµÈ£¡\n" );
+                printf( "è¯·ç¨ç­‰ï¼\n" );
                 break;
             }
             case '0':
             {
-                printf( "¸ĞĞ»ÄãÊ¹ÓÃ±¾Èí¼ş£¬ÔÙ¼û£¡\n" );
+                printf( "æ„Ÿè°¢ä½ ä½¿ç”¨æœ¬è½¯ä»¶ï¼Œå†è§ï¼\n" );
                 Sleep( 5000 );
                 exit( 0 );
             }
             default:
-                printf( "Ñ¡Ïî²»´æÔÚ£¬ÇëÖØĞÂÑ¡Ôñ£º\a" );
+                printf( "é€‰é¡¹ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼š\a" );
         }
         if ( fsel_Num >= '0' && fsel_Num <= '3' )
             break;
