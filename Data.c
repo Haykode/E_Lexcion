@@ -1,4 +1,4 @@
-﻿#include "E_Lexicon.h"
+#include "E_Lexicon.h"
 
 ListNode *createwords( char *en, char *zh )
 {

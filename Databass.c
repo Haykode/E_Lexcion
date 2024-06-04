@@ -1,4 +1,4 @@
-﻿#include "E_Lexicon.h"
+#include "E_Lexicon.h"
 
 void write_to_file( LinkedList *obj )
 {
